@@ -1,0 +1,12 @@
+<p>There are {{totalCarParts()}} total parts in stock</p>
+
+    <ul>
+      <li *ngFor = "let race of races" >
+        <h2>{{race.name | uppercase}}</h2>
+        <p> {{race.date | date:'MMM d, y, h:MM a'}}</p>
+        <p> {{race.about}}</p>
+        <p>{{race.entryFee | currency:'EUR':true}}</p>
+        <button *ngIf="!race.isRacing">Race</button>
+      <h3 *ngIf="race.isRacing"> Already Racing</h3>
+    </li>
+    </ul>
